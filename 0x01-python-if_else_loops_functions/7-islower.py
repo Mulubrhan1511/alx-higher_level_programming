@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-def islower(c): #return true if c is lower
-    "function that check if c is lower or upper case"
+def islower(c):
     x = int(ord(c))
     if x >= 97 and x <= 127:
         return True
