@@ -12,6 +12,6 @@ def inherits_from(obj, a_class):
         If obj is exactly an instance of a_class - True.
         Otherwise - False.
     """
-    if type(obj) == a_class:
+    if type(obj) is a_class:
         return False
-    return True
+    return isinstance(obj, a_class)
