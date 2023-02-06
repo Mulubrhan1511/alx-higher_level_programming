@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""basegeometryclass"""
+
+
 class BaseGeometry:
-    """ Empty class """
-    pass
+    """instance of geometry class"""
+    def __init__(self):
+        """initialize class"""
+        pass
