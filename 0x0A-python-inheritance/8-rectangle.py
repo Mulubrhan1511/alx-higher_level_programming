@@ -20,6 +20,11 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle formation"""
+    """ Class that defines a rectangle from BaseGeometry Class """
+
     def __init__(self, width, height):
-        self.integer_validator(width, height)
+        """ Initializes instance """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
