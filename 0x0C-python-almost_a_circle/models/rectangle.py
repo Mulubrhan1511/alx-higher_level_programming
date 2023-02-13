@@ -91,7 +91,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """ string representation of a rectangle"""
-        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """updates multiple attributes"""
@@ -121,5 +125,11 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        """return rectangle dictionary represntation"""
-        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        """returns a dictionary rep of a square"""
+        dictionary = {}
+        dictionary["x"] = self.x
+        dictionary["width"] = self.width
+        dictionary["id"] = self.id
+        dictionary["height"] = self.height
+        dictionary["y"] = self.y
+        return dictionary
