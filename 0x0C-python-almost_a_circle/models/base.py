@@ -106,3 +106,39 @@ class Base:
         except:
             pass
         return l
+    
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """that opens a window and draws all the"""
+        rectangles = turtle.Turtle()
+        for i in list_rectangles:
+
+            rectangles.forward(i.width)
+            rectangles.left(90)
+            rectangles.forward(i.height)
+            rectangles.left(90)
+            rectangles.forward(i.width)
+            rectangles.left(90)
+            rectangles.forward(i.height)
+            rectangles.penup()
+            rectangles.forward(150)
+
+            rectangles.pendown()
+        rectangles.penup()
+        rectangles.forward(150)
+
+        rectangles.pendown()
+        for i in list_squares:
+
+            rectangles.forward(i.size)
+            rectangles.left(90)
+            rectangles.forward(i.size)
+            rectangles.left(90)
+            rectangles.forward(i.size)
+            rectangles.left(90)
+            rectangles.forward(i.size)
+            rectangles.penup()
+            rectangles.forward(100)
+            rectangles.left(180)
+            rectangles.pendown()
+        turtle.done()    
