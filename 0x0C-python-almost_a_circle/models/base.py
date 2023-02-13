@@ -7,6 +7,7 @@ and avoid duplicating the same code
 
 import csv
 import json
+import turtle
 
 
 class Base:
