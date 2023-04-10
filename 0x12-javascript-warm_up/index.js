@@ -1,6 +1,9 @@
-var result = 0;
-
-  for (var i = 2; i < process.argv.length; i++){
-    result += Number(process.argv[i]);
+#!/usr/bin/node
+// Write a script that prints x times “C is fun”
+var rollingConcatenation = '';
+console.group("Looping Group Example");
+for (let i = 0; i<=9;i++){
+     rollingConcatenation += i;
+     console.log(rollingConcatenation);    
 }
-  console.log(result);
+console.groupEnd();
