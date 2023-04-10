@@ -7,7 +7,7 @@ if (process.argv.slice(2).length < 1) {
     if (isNaN(Myvar)) {
         console.log('Not a number')
     } else {
-        console.log(Myvar);
+        console.log('My number: ' + Myvar);
     }
 }
   
