@@ -7,5 +7,6 @@ if (!process.argv[2]) {
   } else {
     const MyList = process.argv.slice(2);
     const SortedList = MyList.sort();
-    console.log(SortedList[process.argv.slice(2).length - 2]);
+    const RevList = SortedList.reverse();
+    console.log(RevList[1]);
   } 
