@@ -17,6 +17,7 @@ for (i in MyDict) {
 }
 //console.log(list);
 //console.log(MyList);
+MyList.sort();
 const y = MyList.length;
 for (x = 0; x < y; x++) {
     Newlist = [];
@@ -26,7 +27,7 @@ for (x = 0; x < y; x++) {
             Newlist.push(j);
         }
     }
-    NewDict[x] = Newlist;
+    NewDict[MyList[x]] = Newlist;
     //console.log(Newlist);
 }
 console.log(NewDict);
