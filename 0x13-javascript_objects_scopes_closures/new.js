@@ -1,8 +1,5 @@
 #!/usr/bin/node
-const New = [ 4, 2, 3 ];
-x = 1;
-if (x in New) {
-    New.push(x);
-}
-
-console.log(New);
+const myList = [1,4,5,1,2,4,5,6,7];
+const unique = [...new Set(myList)];
+    
+console.log(unique);

@@ -2,21 +2,20 @@
 const MyDict = require('./101-data.js').dict;
 const NewDict = {}
 const list = []
-const MyList = []
+let MyList = []
 let Newlist = []
 
 for (i in MyDict) {
     let X = MyDict[i];
     //console.log(i);
-    if (!(X in MyList)) {
-        MyList.unshift(X);
-        //console.log(MyList);
-    }
+    //console.log(X);
+    list.push(X);
 }
+
 //console.log(list);
+MyList = [...new Set(list)];
 //console.log(MyList);
-MyList.sort();
-//console.log(MyList);
+MyList.sort()
 const y = MyList.length;
 for (x = 0; x < y; x++) {
     Newlist = [];
