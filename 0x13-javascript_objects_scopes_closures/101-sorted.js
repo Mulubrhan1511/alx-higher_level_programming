@@ -9,12 +9,13 @@ for (i in MyDict) {
     let X = MyDict[i];
     //console.log(i);
     if (!(X in MyList)) {
-        MyList.push(X);
+        MyList.unshift(X);
+        //console.log(MyList);
     }
 }
 //console.log(list);
 //console.log(MyList);
-//MyList.sort();
+MyList.sort();
 //console.log(MyList);
 const y = MyList.length;
 for (x = 0; x < y; x++) {
