@@ -6,19 +6,19 @@ fs.readFile(MyArgs[0], 'utf8', (err, data) => {
     console.error(err);
     return;
   }
-  //console.log(data);
+  // console.log(data);
   fs.readFile(MyArgs[1], 'utf8', (err, data2) => {
     if (err) {
       console.error(err);
       return;
     }
-    //console.log(data2);
-    str = data + data2;
+    // console.log(data2);
+    const str = data + data2;
     fs.writeFile(MyArgs[2], str, err => {
-        if (err) {
-          console.error(err);
-        }
-        // file written successfully
-      });
+      if (err) {
+        console.error(err);
+      }
+      // file written successfully
+    });
   });
 });
