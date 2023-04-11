@@ -13,8 +13,8 @@ fs.readFile(MyArgs[0], 'utf8', (err, data) => {
       return;
     }
     // console.log(data2);
-    const str = data + data2;
-    fs.writeFile(MyArgs[2], str, err => {
+    const conc = data + data2;
+    fs.writeFile(MyArgs[2], conc, err => {
       if (err) {
         console.error(err);
       }
