@@ -2,7 +2,7 @@
 import MySQLdb
 from sys import argv
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost",user= argv[1],password= argv[2],database= argv[3])
+    db = MySQLdb.connect(host="localhost",user= argv[1],password= argv[2],database= argv[3], charset="utf8", port=3306)
     cur = db.cursor()
     cur.execute("SELECT * FROM states")
     rows = cur.fetchall()
