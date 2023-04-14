@@ -1,18 +1,28 @@
 #!/usr/bin/python3
-"""
-python script
-"""
-import MySQLdb
+""" Select states with names matching arguments """
+
+
 from sys import argv
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=argv[1], password=argv[2],
-                         database=argv[3], charset="utf8", port=3306)
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE '{:s}' \
-                ORDER BY id ASC".format(argv[4]))
-    rows = cur.fetchall()
-    for row in rows:
-        if row[1] == argv[4]:
-            print(row)
-    cur.close()
-    db.close()
+import MySQLdb
+
+if __name__ == '__main__':
+
+    db_user = argv[1]
+    db_passwd = argv[2]
+    db_name = argv[3]
+    search = '{}'.format(argv[4])
+
+    database = MySQLdb.connect(host='localhost',
+                               port=3306,
+                               user=db_user,
+                               passwd=db_passwd,
+                               db=db_name)
+
+    cursor = database.cursor()
+
+    cursor.execute('SELECT id, name FROM states\
+                   WHERE name = %s\
+                   ORDER BY states.id ASC;', (search,))
+
+    for row in cursor.fetchall():
+        print(row)
