@@ -13,7 +13,12 @@ if __name__ == "__main__":
                 ON cities.state_id = states.id\
                 WHERE states.name = %s;', ('{}'.format(argv[4]),))
     rows = cur.fetchall()
+    count = 0
     for row in rows:
-        print(row)
+        count += 1
+        if count >= len(row):
+            print(row[1])
+        else:
+            print(row[1], end=', ')
     cur.close()
     db.close()
