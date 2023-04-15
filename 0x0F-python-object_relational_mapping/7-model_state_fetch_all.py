@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database 
+"""Start link class to table in database
 """
 import sys
 import MySQLdb
@@ -18,4 +18,4 @@ if __name__ == "__main__":
 
     for x in myresult:
         print(x[0], end='')
-        print(': ' + x[1])   
+        print(': ' + x[1])
