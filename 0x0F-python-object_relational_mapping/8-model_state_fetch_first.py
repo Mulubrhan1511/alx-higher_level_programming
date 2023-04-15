@@ -6,6 +6,7 @@ import MySQLdb
 from model_state import Base, State
 from sys import argv
 from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=argv[1], password=argv[2],
