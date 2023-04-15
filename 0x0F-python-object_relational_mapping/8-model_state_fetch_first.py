@@ -9,8 +9,8 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=argv[1], password=argv[2],
-                         database=argv[3], charset="utf8", port=3306)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)    
     cur = db.cursor()
 
     cur.execute("SELECT * FROM states")
