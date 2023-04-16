@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 
 """
-File: 11-model_state_insert.py
-Desc: This module contains a python script that adds the
-State object “Louisiana” to the database hbtn_0e_6_usa
-Author: Gizachew Bayness (Elec Crazy).
-Date Created: Oct 7 2022
+Write a script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
 """
 
 from model_state import Base, State
@@ -21,8 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    louisiana = State(name="Louisiana")
-    session.add(louisiana)
+    add_state = State(name="Louisiana")
+    session.add(add_state)
     session.commit()
-    session.refresh(louisiana)
-    print(louisiana.id)
+    session.refresh(add_state)
+    print(add_state.id)
+    session.commit()
+    session.close()
