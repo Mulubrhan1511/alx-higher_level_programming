@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-lists
+Write a script that lists all State objects,
+and corresponding City objects
 """
 
 import sqlalchemy
