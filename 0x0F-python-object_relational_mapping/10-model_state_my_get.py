@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-prints the State
+Write a script that prints the State object with the name
 """
 
 import sqlalchemy
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=eng)
     session = Session()
     state = session.query(State).filter_by(name=argv[4]).first()
-    if state != None:
+    if state is not None:
         print(state.id)
     else:
         print("Not found")
