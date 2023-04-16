@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""Start link class to table in database
 """
-import sys
-import MySQLdb
-from model_state import Base, State
-from sys import argv
-from sqlalchemy import (create_engine)
+list the first State object
+"""
+
+import sqlalchemy
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sys import argv
+from model_state import Base, State
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]), pool_pre_ping=True)    
-    cur = db.cursor()
-
-    cur.execute("SELECT * FROM states")
-
-    myresult = cur.fetchall()
-
-    if len(myresult) == 0:
-        pass
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    argv[3]))
+    Base.metadata.create_all(eng)
+    Session = sessionmaker(bind=eng)
+    session = Session()
+    first_state = session.query(State).order_by(State.id).first()
+    if first_state is not None:
+        print("{}: {}".format(first_state.id, first_state.name))
     else:
-        print(myresult[0][0], end='')
-        print(': ' + myresult[0][1])
+        print("Nothing")
+    session.close()
