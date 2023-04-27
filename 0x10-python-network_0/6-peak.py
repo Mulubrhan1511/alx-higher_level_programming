@@ -1,17 +1,25 @@
 #!/usr/bin/python3
-""" Test function find_peak """
+""" Finds a peak inside a list """
+
 
 def find_peak(list_of_integers):
-    """ Test function find_peak """
-    if len(list_of_integers) == 0:
+    if list_of_integers == []:
         return None
-    size = len(list_of_integers)
-    if size == 1:
-        return list_of_integers[0]
-    if size == 2:
-        return max(list_of_integers[0],list_of_integers[1])
-    if size == 3:
-        return max(list_of_integers[0], list_of_integers[1],list_of_integers[2])
-    for i in range(size):
-        if list_of_integers[i] < list_of_integers[i + 1] >list_of_integers[i + 2]:
-            return list_of_integers[i + 1]
+
+    length = len(list_of_integers)
+    mid = int(length / 2)
+    li = list_of_integers
+
+    if mid - 1 < 0 and mid + 1 >= length:
+        return li[mid]
+    elif mid - 1 < 0:
+        return li[mid] if li[mid] > li[mid + 1] else li[mid + 1]
+    elif mid + 1 >= length:
+        return li[mid] if li[mid] > li[mid - 1] else li[mid - 1]
+
+    if li[mid - 1] < li[mid] > li[mid + 1]:
+        return li[mid]
+
+    if li[mid + 1] > li[mid - 1]:
+        return find_peak(li[mid:])
+    return find_peak(li[:mid])
