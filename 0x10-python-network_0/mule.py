@@ -1,2 +1,1 @@
-m = []
-print(len(m))
+print(2 // 4)
