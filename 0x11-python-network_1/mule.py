@@ -1,7 +1,14 @@
 #!/usr/bin/python3
-""" fetches from the url"""
+import urllib.parse
 import urllib.request
 
-with urllib.request.urlopen('https://alx-intranet.hbtn.io/status/') as response:
-    html = response.read()
-    print(html)
+url = 'http://0.0.0.0:5000/post_email'
+values = {'name' : 'Michael Foord',
+          'location' : 'Northampton',
+          'language' : 'Python' }
+
+data = urllib.parse.urlencode(values)
+data = data.encode('ascii') # data should be bytes
+req = urllib.request.Request(url, data)
+with urllib.request.urlopen(req) as response:
+   the_page = response.read()
