@@ -10,4 +10,5 @@ if __name__ == "__main__":
     r = requests.get(url)
     my_fiile = r.json()
     for i in range(10):
-        print('{}: {}'.format(commit.get('sha'),commit.get('commit').get('author').get('name')))
+        print('{}: {}'.format(my_fiile.get('sha'),
+                              my_fiile.get('commit').get('author').get('name')))
