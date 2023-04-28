@@ -8,8 +8,8 @@ if __name__ == "__main__":
         payload = {"q": ""}
     else:
         payload = {"q": sys.argv[0]}
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
-        r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
         file = r.json()
         if file == {}:
             print('No result')
