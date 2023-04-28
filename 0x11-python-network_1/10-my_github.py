@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""Uses the GitHub API to display a GitHub ID based on given credentials.
-"""
-import sys
+""" Write a Python script that fetches https://alx-intranet.hbtn.io/status """
 import requests
-from requests.auth import HTTPBasicAuth
-
+import sys
 
 if __name__ == "__main__":
-    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
-    req = requests.get("https://api.github.com/user", auth=auth)
-    print(req.json().get("id"))
+    username = sys.argv[1]
+    password = sys.argv[2]
+    file = requests.auth.HTTPBasicAuth(username, password)
+    r = requests.get("https://api.github.com/user", auth=file)
+    print(r.json().get("id"))
