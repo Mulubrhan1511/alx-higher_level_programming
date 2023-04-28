@@ -5,9 +5,9 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        payload = {'q': ''}
+        payload = {"q": ""}
     else:
-        payload = {'q': sys.argv[0]}
+        payload = {"q": sys.argv[0]}
     try:
         r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
         file = r.json()
