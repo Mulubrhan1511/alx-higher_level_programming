@@ -11,8 +11,8 @@ if __name__ == "__main__":
     my_fiile = r.json()
     try:
         for i in range(10):
-                print("{}: {}".format(
-                    my_fiile[i].get("sha"),
-                    my_fiile[i].get("commit").get("author").get("name")))
+            print("{}: {}".format(
+                my_fiile[i].get("sha"),
+                my_fiile[i].get("commit").get("author").get("name")))
     except IndexError:
-         pass
+        pass
